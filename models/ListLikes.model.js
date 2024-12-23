@@ -1,13 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
-    const PreferredGenre = sequelize.define('PreferredGenre', {
+    const ListLikes = sequelize.define('ListLikes', {
         user_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
         },
-        genre_id: {
+        list_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-        }
+        },
+        like_date: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW
+        },
     })
-    return PreferredGenre
+    return ListLikes
 }

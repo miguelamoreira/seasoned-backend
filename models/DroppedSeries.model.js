@@ -1,13 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
-    const PreferredGenre = sequelize.define('PreferredGenre', {
+    const DroppedSeries = sequelize.define('DroppedSeries', {
         user_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
         },
-        genre_id: {
+        series_api_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
+        },
+        drop_date: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW
         }
     })
-    return PreferredGenre
+    return DroppedSeries
 }
