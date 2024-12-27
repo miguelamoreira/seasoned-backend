@@ -1,6 +1,6 @@
 const db = require("../models/index.js");
 const users = db.users;
-const { ValidationError } = require("sequelize");
+const { ValidationError, Sequelize } = require("sequelize");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { JWTconfig } = require("../config/db.config.js");

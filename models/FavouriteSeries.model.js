@@ -12,6 +12,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             validate: { min: 1, max: 4 },
         }
+    },{
+        timestamps: false, 
     })
     return FavouriteSeries
 }

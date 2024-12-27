@@ -8,6 +8,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
         },
         
+    },{
+        timestamps: false, 
     })
     return Genre
 }

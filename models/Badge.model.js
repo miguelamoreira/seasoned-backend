@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT, 
             allowNull: false 
         },
+    },{
+        timestamps: false, 
     })
     return Badge
 }

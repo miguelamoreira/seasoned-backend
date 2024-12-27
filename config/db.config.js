@@ -20,4 +20,6 @@ const dbConfig = {
     }
 };
 
-module.exports = dbConfig;
+const JWTconfig = { SECRET: process.env.SECRET }
+
+module.exports = {dbConfig, JWTconfig};

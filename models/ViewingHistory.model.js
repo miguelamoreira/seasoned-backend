@@ -25,6 +25,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             validate: { min: 0, max: 100 }
         }
+    },{
+        timestamps: false, 
     })
     return ViewingHistory
 }

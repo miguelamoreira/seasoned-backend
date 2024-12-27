@@ -13,3 +13,7 @@ router.route("/")
 
 router.route("/login")
   .post(usersController.login)
+
+
+  //export this router
+module.exports = router;

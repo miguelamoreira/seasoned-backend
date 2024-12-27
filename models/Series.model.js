@@ -26,6 +26,8 @@ module.exports = (sequelize, DataTypes) => {
         poster_url: { 
             type: DataTypes.TEXT 
         },
+    },{
+        timestamps: false, 
     })
     return Series
 }

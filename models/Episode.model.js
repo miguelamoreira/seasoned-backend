@@ -20,6 +20,8 @@ module.exports = (sequelize, DataTypes) => {
         air_date: { 
             type: DataTypes.DATE 
         },
+    },{
+        timestamps: false, 
     })
     return Episode
 }

@@ -16,6 +16,8 @@ module.exports = (sequelize, DataTypes) => {
         season_title: { 
             type: DataTypes.STRING, 
         },
+    },{
+        timestamps: false, 
     })
     return Season
 }

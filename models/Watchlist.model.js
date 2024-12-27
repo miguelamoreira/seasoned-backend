@@ -8,6 +8,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
         },
+    },{
+        timestamps: false, 
     })
     return Watchlist
 }
