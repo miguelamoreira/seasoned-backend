@@ -1,11 +1,15 @@
 const db = require("../models/index.js");
-const users = db.users;
 const { ValidationError, Sequelize } = require("sequelize");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { JWTconfig } = require("../config/db.config.js");
 require("dotenv").config();
 
+//Declare DB's
+const users = db.users;
+const Following = db.Following
+
+// Functions
 exports.findAll = async (req, res) => {
   let user = await users.findAll();
 
@@ -94,4 +98,20 @@ exports.login = async (req, res, next) => {
         msg: err.message || "Some error occurred while creating the user.",
       });
   }
+};
+
+
+exports.followingGet = async (req, res) => {
+  let FollowingUsers = await Following.findAll({
+    where: {
+      user1_id: req.params.id,
+    },
+  });
+
+
+  if (FollowingUsers) return res.json(FollowingUsers);
+
+  return res.status(500).json({
+    error: "Server Error, pls check the connection",
+  });
 };

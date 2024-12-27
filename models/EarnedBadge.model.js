@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const EarnedBadge = sequelize.define("EarnedBadge", {
+    const EarnedBadges = sequelize.define("EarnedBadges", {
         user_id: { 
             type: DataTypes.INTEGER, 
             primaryKey: true 
@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         },
     },{
         timestamps: false, 
+        freezeTableName: true,
     })
-    return EarnedBadge
+    return EarnedBadges
 }

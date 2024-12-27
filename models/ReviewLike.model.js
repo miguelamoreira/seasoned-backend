@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const ReviewLike = sequelize.define("ReviewLike", {
+    const ReviewLikes = sequelize.define("ReviewLikes", {
         user_id: { 
             type: DataTypes.INTEGER, 
             primaryKey: true 
@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         },
     },{
         timestamps: false, 
+        freezeTableName: true,
     })
-    return ReviewLike;
+    return ReviewLikes;
 }

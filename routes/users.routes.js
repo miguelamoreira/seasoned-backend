@@ -14,6 +14,8 @@ router.route("/")
 router.route("/login")
   .post(usersController.login)
 
+  router.route("/:id/following")
+  .get(usersController.followingGet)
 
   //export this router
 module.exports = router;

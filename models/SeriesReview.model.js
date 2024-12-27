@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const SeriesReview = sequelize.define('SeriesReview', {
+    const SeriesReviews = sequelize.define('SeriesReviews', {
         review_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     },{
         timestamps: false, 
+        freezeTableName: true,
     })
-    return SeriesReview;
+    return SeriesReviews;
 }

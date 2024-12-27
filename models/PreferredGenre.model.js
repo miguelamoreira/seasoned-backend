@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const PreferredGenre = sequelize.define('PreferredGenre', {
+    const PreferredGenres = sequelize.define('PreferredGenres', {
         user_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     },{
         timestamps: false, 
+        freezeTableName: true,
     })
-    return PreferredGenre
+    return PreferredGenres
 }

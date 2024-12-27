@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Badge = sequelize.define("Badge", {
+    const Badges = sequelize.define("Badges", {
         badge_id: { 
             type: DataTypes.INTEGER, 
             primaryKey: true, 
@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false 
         },
     },{
-        timestamps: false, 
+        timestamps: false,
+        freezeTableName: true, 
     })
-    return Badge
+    return Badges
 }

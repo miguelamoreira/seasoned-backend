@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Genre = sequelize.define('Genre', {
+    const Genres = sequelize.define('Genres', {
         genre_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         
     },{
         timestamps: false, 
+        freezeTableName: true,
     })
-    return Genre
+    return Genres
 }

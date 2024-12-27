@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Season = sequelize.define("Season", {
+    const Seasons = sequelize.define("Seasons", {
         season_id: { 
             type: DataTypes.INTEGER, 
             primaryKey: true,
@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         },
     },{
         timestamps: false, 
+        freezeTableName: true,
     })
-    return Season
+    return Seasons
 }
