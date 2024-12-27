@@ -17,6 +17,7 @@ exports.findAll = async (req, res) => {
 };
 
 exports.create = async (req, res) => {
+
   let user = await users.findOne({
     where: {
       name: req.body.name,
@@ -27,7 +28,7 @@ exports.create = async (req, res) => {
       success: false,
       msg: "User is already in the database",
     });
-
+    
   let userNew = await users.create({
     name: req.body.name,
     email: req.body.email,
