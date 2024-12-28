@@ -3,19 +3,37 @@ const router = express.Router();
 require("dotenv").config();
 
 // import controller middleware
-const usersController= require("../controllers/users.controller");
+const usersController = require("../controllers/users.controller");
 const authController = require("../controllers/auth.controller");
 
-router.route("/")
-  .get(usersController.findAll)
-  .post(usersController.create)
+router.route("/").get(usersController.findAll).post(usersController.create);
 
+router.route("/login").post(usersController.login);
 
-router.route("/login")
-  .post(usersController.login)
-
-  router.route("/:id/following")
+router.route("/:id/following")
   .get(usersController.followingGet)
+  .post(usersController.followingPost)
+  .delete(usersController.followingDelete);
 
-  //export this router
+router.route("/:id/followers")
+  .get(usersController.followersGet);
+
+router.route("/:id/preferedGenres")
+  .get(usersController.preferedGenresGet)
+  .post(usersController.preferedGenresPost)
+  .delete(usersController.preferedGenresDelete);
+
+router.route("/:id/viewingHistory")
+  .get(usersController.viewingHistoryGet)
+  .post(usersController.viewingHistoryPost)
+
+router.route("/:id/followedSeries")
+  .get(usersController.followedSeriesGet)
+  .post(usersController.followedSeriesPost)
+  .delete(usersController.followedSeriesDelete)
+
+router.route("/:id/watchlist")
+  .get(usersController.watchlistGet)
+  .post(usersController.watchlistPost)
+  .delete(usersController.watchlistDelete);
 module.exports = router;

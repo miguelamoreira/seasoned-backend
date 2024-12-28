@@ -17,11 +17,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             defaultValue: DataTypes.NOW
         },
-        timed_watched: {
+        time_watched: {
             type: DataTypes.INTEGER,
             defaultValue: 0
         },
-        episode_percentage: {
+        episode_progress: {
             type: DataTypes.INTEGER,
             validate: { min: 0, max: 100 }
         }

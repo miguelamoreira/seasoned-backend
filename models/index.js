@@ -36,6 +36,7 @@ db.EarnedBadges = require("./EarnedBadge.model.js")(sequelize, DataTypes);
 db.Episodes = require("./Episode.model.js")(sequelize, DataTypes);
 db.EpisodeLikes = require("./EpisodeLikes.model.js")(sequelize, DataTypes);
 db.FavouriteSeries = require("./FavouriteSeries.model.js")(sequelize, DataTypes);
+db.FollowedSeries = require("./FollowedSeries.model.js")(sequelize, DataTypes);
 db.Followers = require("./Followers.model.js")(sequelize, DataTypes);
 db.Following = require("./Following.model.js")(sequelize, DataTypes);
 db.FriendsActivities = require("./FriendsActivities.model.js")(sequelize, DataTypes);
