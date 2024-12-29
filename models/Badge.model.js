@@ -13,6 +13,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT, 
             allowNull: false 
         },
+        howTo: {  
+            type: DataTypes.STRING,  
+            allowNull: false  
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
     },{
         timestamps: false,
         freezeTableName: true, 

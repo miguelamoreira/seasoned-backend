@@ -15,5 +15,6 @@ app.get("/", function (req, res) {
 });
 
 app.use("/users", require("./routes/users.routes.js"));
+app.use('/badges', require('./routes/badges.routes.js'));
 
 app.listen(port, () => console.log(`App listening at http://${host}:${port}/`));

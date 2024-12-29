@@ -2,6 +2,11 @@ const express = require("express");
 const router = express.Router();
 require("dotenv").config();
 
+// cloudinary
+const multer = require('multer');
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
 // import controller middleware
 const usersController = require("../controllers/users.controller");
 const authController = require("../controllers/auth.controller");
