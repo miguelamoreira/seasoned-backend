@@ -36,4 +36,7 @@ router.route("/:id/watchlist")
   .get(usersController.watchlistGet)
   .post(usersController.watchlistPost)
   .delete(usersController.watchlistDelete);
+
+  router.route("/:id/friendships")
+  .get(usersController.friendshipsGet)
 module.exports = router;

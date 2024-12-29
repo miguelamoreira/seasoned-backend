@@ -13,6 +13,7 @@ const Genres = db.Genres;
 const viewingHistory = db.ViewingHistory;
 const followedSeries= db.FollowedSeries
 const watchlist = db.Watchlist
+
 // Functions
 exports.findAll = async (req, res) => {
   let user = await users.findAll();
@@ -415,4 +416,38 @@ exports.watchlistDelete = async (req, res) => {
   if (result == 1) {
     return res.status(200).json(`Series successfully removed from Watchlist`);
   }
+};
+
+
+
+exports.friendshipsGet = async (req, res) => {
+  let FollowingUsers = await Following.findAll({
+    where: {
+      user1_id: req.params.id,
+    },
+  });
+  let friendships= []
+  for (let item = 0; item < FollowingUsers.length; item++) {
+    console.log(FollowingUsers[item].user2_id);
+    
+    let FollowBack = await Following.findOne({
+      where: {
+        user1_id: FollowingUsers[item].user2_id,
+        user2_id: req.params.id
+      },
+    });
+    if(FollowBack){
+      console.log("BRO IS FOLLOWING BACK");
+      friendships.push(FollowingUsers[item])
+    }else{
+      console.log("FAKE FRIEND");
+    }
+    
+  }
+  
+  if (friendships.length != 0) return res.json(friendships);
+
+  return res.status(400).json({
+    error: "User has no friendships",
+  });
 };
