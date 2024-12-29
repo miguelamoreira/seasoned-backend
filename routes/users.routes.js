@@ -6,9 +6,17 @@ require("dotenv").config();
 const usersController = require("../controllers/users.controller");
 const authController = require("../controllers/auth.controller");
 
-router.route("/").get(usersController.findAll).post(usersController.create);
+router.route("/")
+  .get(usersController.findAll)
+  .post(usersController.create);
 
-router.route("/login").post(usersController.login);
+router.route("/login")
+  .post(usersController.login);
+
+router.route("/:id")
+  .get(usersController.findOne)
+  .patch(usersController.patch)
+  .delete(usersController.delete);
 
 router.route("/:id/following")
   .get(usersController.followingGet)
@@ -37,6 +45,16 @@ router.route("/:id/watchlist")
   .post(usersController.watchlistPost)
   .delete(usersController.watchlistDelete);
 
-  router.route("/:id/friendships")
+router.route("/:id/friendships")
   .get(usersController.friendshipsGet)
+
+router.route("/:id/earnedBadges")
+  .get(usersController.earnedBadgesGet)
+  .post(usersController.earnedBadgesPost)
+
+router.route("/:id/seasonProgress")
+  .get(usersController.seasonProgressGet)
+  .post(usersController.seasonProgressPost)
+  .put(usersController.seasonProgressPut)
+
 module.exports = router;
