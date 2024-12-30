@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const axios = require('axios');
 const db = require("./models");
 
 const app = express();
@@ -16,5 +17,9 @@ app.get("/", function (req, res) {
 
 app.use("/users", require("./routes/users.routes.js"));
 app.use('/badges', require('./routes/badges.routes.js'));
+app.use('/genres', require('./routes/genres.routes.js'));
+app.use('/series', require('./routes/series.routes.js'));
+app.use('/seasons', require('./routes/seasons.routes.js'));
+app.use('/episodes', require('./routes/episodes.routes.js'));
 
 app.listen(port, () => console.log(`App listening at http://${host}:${port}/`));

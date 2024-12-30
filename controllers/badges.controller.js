@@ -3,7 +3,7 @@ const { ValidationError, Sequelize, where } = require("sequelize");
 
 const Badge = db.Badges;
 
-exports.getFindAllBadges = async (req, res) => {
+exports.findAllBadges = async (req, res) => {
     try {
         const badges = await Badge.findAll();
 
