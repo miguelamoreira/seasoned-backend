@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
         },
-        activity_id: {
+        episode_api_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
         },
